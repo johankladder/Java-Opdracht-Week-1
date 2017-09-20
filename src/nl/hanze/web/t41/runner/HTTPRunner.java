@@ -6,11 +6,14 @@ import nl.hanze.web.t41.http.HTTPSettings;
 
 public class HTTPRunner {
 	public static void main (String args[]) {
+
 		/* 
 		  *** OPGAVE 1.1 ***
 		  zorg ervoor dat het port-nummer en de basis-directory vanuit de command-line kunnen worden meegegeven.
 		  LET OP: de default-waarden moet je nog wel instellen in de Settings-klasse.
 		*/
+
+		setOptions(args);
 		
 		int portnumber = HTTPSettings.PORT_NUM;		
 		
@@ -20,5 +23,9 @@ public class HTTPRunner {
 	    } catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	private static void setOptions(String[] args) {
+		HTTPSettings.setPort(args);
 	}
 }

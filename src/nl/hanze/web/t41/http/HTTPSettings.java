@@ -14,21 +14,26 @@ public final class HTTPSettings {
 	static final int PORT_MIN=0;
 	static final int PORT_MAX=65535;
 	
-	static final public int PORT_NUM = 4444;
+	static public int PORT_NUM = 4444;
 	static final HashMap<String, String> dataTypes = new HashMap<String, String>();	
 
 	static final String[] DAYS = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
 	static final String[] MONTHS = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
 	
-	
-	
+	public static void setPort(String[] args) {
+		if(args.length > 0) {
+			PORT_NUM = Integer.parseInt(args[0]);
+		}
+		// Else use the default.
+	}
+
 	public static String getDate() {
 		GregorianCalendar cal = new GregorianCalendar();
 		String rv = "";
 		rv += DAYS[cal.get(Calendar.DAY_OF_WEEK) - 1] + ", ";
 		rv += cal.get(Calendar.DAY_OF_MONTH) + " " + MONTHS[cal.get(Calendar.MONTH)];
 		rv += " " + cal.get(Calendar.YEAR) + "\r\n";
-		
+
 		return rv;
 	}
 }
