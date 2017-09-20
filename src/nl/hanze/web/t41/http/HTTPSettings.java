@@ -7,7 +7,7 @@ import java.util.HashMap;
 public final class HTTPSettings {
 	// ZET HIER DE JUISTE DIRECTORY IN WAAR JE BESTANDEN STAAN.
 	
-	static final String DOC_ROOT = "";
+	static public String DOC_ROOT = System.getProperty("user.dir");
 	static final String FILE_NOT_FOUND = "";
 	
 	static final int BUFFER_SIZE = 2048;	
@@ -35,5 +35,12 @@ public final class HTTPSettings {
 		rv += " " + cal.get(Calendar.YEAR) + "\r\n";
 
 		return rv;
+	}
+
+	public static void setDocumentRoot(String[] args) {
+		if(args.length > 1) {
+			DOC_ROOT = args[1];
+		}
+		// Else use the default.
 	}
 }

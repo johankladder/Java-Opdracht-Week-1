@@ -14,6 +14,7 @@ public class HTTPRunner {
 		*/
 
 		setOptions(args);
+
 		
 		int portnumber = HTTPSettings.PORT_NUM;		
 		
@@ -27,5 +28,6 @@ public class HTTPRunner {
 
 	private static void setOptions(String[] args) {
 		HTTPSettings.setPort(args);
+		HTTPSettings.setDocumentRoot(args);
 	}
 }

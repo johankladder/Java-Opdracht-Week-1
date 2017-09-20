@@ -17,6 +17,7 @@ public class HTTPListener {
 	public void startUp() throws Exception {
 		ServerSocket servsock=new ServerSocket(portnumber);
 		System.out.println("Server started");
+		System.out.println("Document root: " + HTTPSettings.DOC_ROOT);
 		System.out.println("Waiting requests at port " + portnumber);
 		
 		while (true) {
